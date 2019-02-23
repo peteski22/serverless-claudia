@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "marias-pizzeria-executor",
+    "name": "marias-pizzeria",
+    "region": "eu-west-1"
+  },
+  "api": {
+    "id": "3hs9f2zp8l",
+    "module": "api"
+  }
+}

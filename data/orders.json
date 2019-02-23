@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "pizzaId": 1,
+        "address": "foo town"
+    }, 
+    {
+        "id": 2,
+        "pizzaId": 1,
+        "address": "silly silly street"
+    },
+    {
+        "id": 3,
+        "pizzaId": 2,
+        "address": "some address"
+    }
+]
