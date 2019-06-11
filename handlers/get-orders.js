@@ -1,17 +1,20 @@
-const orders = require('../data/orders.json');
+const AWS = require('aws-sdk');
+const docClient = new AWS.DynamoDB.DocumentClient();
 
 function getOrders(orderId) {
-    if (!orderId)
-        return orders;
+    if (typeof orderId === 'undefined')
+        return docClient.scan({
+            TableName: 'pizza-orders'
+        }).promise()
+        .then(result => result.Items);
 
-    const order = orders.find((order) => {
-        return order.id == orderId;
-    });
-
-    if (order) 
-        return order;
-
-    throw new Error('The order you requested was not found');
+   return docClient.get({
+       TableName: 'pizza-orders',
+       Key: {
+           orderId: orderId
+       }
+   }).promise()
+   .then(result => result.Item);
 }
 
-module.exports = getOrders
+module.exports = getOrders;

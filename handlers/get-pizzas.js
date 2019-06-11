@@ -14,5 +14,5 @@ function getPizzas(pizzaId) {
     throw new Error('The pizza you requested was not found');
 }
 
-module.exports = getPizzas
+module.exports = getPizzas;
 
